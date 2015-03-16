@@ -1,0 +1,234 @@
+--------------------------------------------------------
+This code implements the Self-Similarity method of
+Shechtman&Irani from CVPR'07, and is for
+non-commercial use only (patent pending). For commerical
+licensing please refer to YEDA (www.yedarnd.com).
+--------------------------------------------------------
+This program itself was written by Ori Brostovski,
+with algorithmic help from Meirav Galun and Eli Shechtman.
+This version was compiled in date Jul 16 2009
+and in time 10:26:04.
+For more information, see ``README''
+For command-line parameters, add --help to the command line
+--------------------------------------------------------
+Usage 1.1: selfsim_cpp QueryImage QueryMask DataImage DataMask
+Usage 1.2: selfsim_cpp QueryImage QueryMask DataImage
+Usage 1.3: selfsim_cpp QueryImage DataImage
+Usage 2.1: selfsim_cpp --OnlyDesc Image Mask
+Usage 2.2: selfsim_cpp --OnlyDesc Image
+Usage 3: selfsim_cpp --OnlyVote QueryDesc DataDesc
+--------------------------------------------------------
+Parameter info (note, some parameters
+may contain a list of values, to specify
+such a list, simply assign the parameter twice
+i.e. --GBSigmas=1 --GBSigmas=1.5):
+Name: --Angles
+Type: number
+Default value: 15
+Description: Number of sectors per ring of log-polar bins
+----------------------------------------------
+Name: --AutoCorrCoef
+Type: number
+Default value: 4
+Description: Used in the normalization of surfaces to say how much differences are significant
+----------------------------------------------
+Name: --BiasFeatures
+Type: flag
+Default value: false
+Description: Used in the normalization of surfaces to say whether the normalization should be biased
+----------------------------------------------
+Name: --BinAverageMethod
+Type: string
+Default value: `max', 
+Description: Method for binning correlation surfaces (possible values: `max')
+----------------------------------------------
+Name: --DescOut
+Type: string
+Default value: `', 
+Description: Changes the name for the outputted .desc file (use with --OnlyDesc)
+----------------------------------------------
+Name: --EvaluationCircle
+Type: circle
+Default value: 
+Description: For performance evaluation purposes, specifies a circle where we should find a query
+----------------------------------------------
+Name: --FixedMultiscalePointGenerator
+Type: string
+Default value: `', 
+Description: Instead of generating sampling points, gets them from a file
+----------------------------------------------
+Name: --FixedPointGenerator
+Type: string
+Default value: `', 
+Description: Instead of generating interest point, take interest points for the largest scale and re-calculate them for the lower scales note that this means the same number of points in each scale
+----------------------------------------------
+Name: --GBSigmas
+Type: number
+Default value: 0, 0.75, 1.5
+Description: Sigmas using for geometric blur
+----------------------------------------------
+Name: --Help
+Type: flag
+Default value: false
+Description: Prints our parameter information
+----------------------------------------------
+Name: --LocSigma
+Type: number
+Default value: 5
+Description: Sigma of the locational gaussian used for voting also affects it's size
+----------------------------------------------
+Name: --MaxPoints
+Type: number
+Default value: 20000
+Description: Maximal allowed number of interest points
+----------------------------------------------
+Name: --MinSim
+Type: number
+Default value: 0.7
+Description: Similarity threshold for pruning features (set below zero to disable)
+----------------------------------------------
+Name: --NoColorSpaceLAB
+Type: flag
+Default value: false
+Description: Uses RGB instead of LAB
+----------------------------------------------
+Name: --NoPart
+Type: flag
+Default value: false
+Description: Do not calculate features for surfaces with unknown parts
+----------------------------------------------
+Name: --NoVoteFinal
+Type: flag
+Default value: false
+Description: Do not output vote_final.png
+----------------------------------------------
+Name: --OnlyDesc
+Type: flag
+Default value: false
+Description: Only collect descriptors, avoid voting
+----------------------------------------------
+Name: --OnlyVote
+Type: flag
+Default value: false
+Description: Only vote, avoid collecting descriptors
+----------------------------------------------
+Name: --OutputContributions
+Type: flag
+Default value: false
+Description: Give some info on how much contribution each query feature gave
+----------------------------------------------
+Name: --PartMedian
+Type: flag
+Default value: false
+Description: Replace unknown surface areas with median of surrounding data
+----------------------------------------------
+Name: --PixelNoiseThresh
+Type: number
+Default value: 2500
+Description: Used in the normalization of surfaces as a minimal divisor toget rid of differences due to noise
+----------------------------------------------
+Name: --PointsPerPixel
+Type: number
+Default value: 0.03
+Description: Determines density of interest point grid
+----------------------------------------------
+Name: --PreBinningSigma
+Type: number
+Default value: 0.5
+Description: Used for surface blur before log-polar binning
+----------------------------------------------
+Name: --RPatch
+Type: number
+Default value: 2
+Description: Radius of the patch for calculating descriptors
+----------------------------------------------
+Name: --RSearch
+Type: number
+Default value: 38
+Description: Radius of the search area around the patch
+----------------------------------------------
+Name: --RadiusFirst
+Type: number
+Default value: 6
+Description: Radius of the first ring of log-polar bins
+----------------------------------------------
+Name: --RadiusPower
+Type: number
+Default value: 0.24
+Description: Increasing power applied to RadiusStep
+----------------------------------------------
+Name: --RadiusStep
+Type: number
+Default value: 6
+Description: Base difference between different radii
+----------------------------------------------
+Name: --ScaleBase
+Type: number
+Default value: 1.4142
+Description: Multiplicative Difference between scales (for feature collection)
+----------------------------------------------
+Name: --ScaleFirstPower
+Type: number
+Default value: 0
+Description: First power of ScaleBase coefficient (for feature collection)
+----------------------------------------------
+Name: --ScaleLastPower
+Type: number
+Default value: 2
+Description: Last power of ScaleBase coefficient (for feature collection)
+----------------------------------------------
+Name: --ScoreCircle
+Type: circle
+Default value: 
+Description: Create a vote score file with feature scores, the center of the given circle is assumed to be the correct peak (using (-1,-1,-1) will assume that the current peak is also the correct one.)
+----------------------------------------------
+Name: --SimDistThresh
+Type: number
+Default value: 9
+Description: Affects the logistic function used as similarity measure for voting
+----------------------------------------------
+Name: --SimDistWidth
+Type: number
+Default value: 7
+Description: Affects the logistic function used as similarity measure for voting
+----------------------------------------------
+Name: --SparseThresh
+Type: number
+Default value: 0.03
+Description: Sparseness threshold for pruning features (set below zero to disable, note that all-equal feature will still be pruned)
+----------------------------------------------
+Name: --Verbose
+Type: flag
+Default value: false
+Description: Print out more information
+----------------------------------------------
+Name: --VoteFilterAdd
+Type: string
+Default value: `', 
+Description: Allows specifying a file that tells which features should be used (There are two kinds of weights, additive, and multiplicative - note that these are add/mul in log-space.)
+----------------------------------------------
+Name: --VoteFilterMult
+Type: string
+Default value: `', 
+Description: Allows specifying a file that tells which features should be used (There are two kinds of weights, additive, and multiplicative - note that these are add/mul in log-space.)
+----------------------------------------------
+Name: --VotingScaleBase
+Type: number
+Default value: -1
+Description: Multiplicative Difference between scales (For voting, a negative value implies to vote for all scales.)
+----------------------------------------------
+Name: --VotingScaleFirstPower
+Type: number
+Default value: 0
+Description: First power of ScaleBase coefficient (For voting.)
+----------------------------------------------
+Name: --VotingScaleLastPower
+Type: number
+Default value: 2
+Description: Last power of ScaleBase coefficient (For voting.)
+----------------------------------------------
+Name: --help
+Type: flag
+Default value: false
+Description: Prints our parameter information
+----------------------------------------------
