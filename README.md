@@ -1,13 +1,13 @@
-#
-#
-#   Matlab package implementing "Sketching the Common"
-#   Written by Shai Bagon (shai.bagon@weizmann.ac.il)
-#   www.wisdom.weizmann.ac.il/~bagon
-#   and Or Brostovsky
-#
-#   Copyright 2011 Shai Bagon
-#                                                                 
-#
+###
+###
+###   Matlab package implementing "Sketching the Common"
+###   Written by Shai Bagon (shaibagon@gmail.com)
+###   www.wisdom.weizmann.ac.il/~bagon
+###   and Or Brostovsky
+###
+###   Copyright 2011 Shai Bagon
+###
+###
 
 # Introduction.
 
