@@ -1,52 +1,49 @@
-###
-###
-###   Matlab package implementing "Sketching the Common"
-###   Written by Shai Bagon (shaibagon@gmail.com)
-###   www.wisdom.weizmann.ac.il/~bagon
-###   and Or Brostovsky
-###
-###   Copyright 2011 Shai Bagon
-###
-###
+####   Matlab package implementing "Sketching the Common"
+####   Written by Shai Bagon (shaibagon@gmail.com)
+####   www.wisdom.weizmann.ac.il/~bagon
+####   and Or Brostovsky
 
-# Introduction.
+####   Copyright 2011 Shai Bagon
 
-     This package implements the algorithm for Sketching the Common
-     as described in:
+## Introduction.
+
+This package implements the algorithm for Sketching the Common
+as described in:
 
      Shai Bagon, Or Brostovsky, Meirav Galun and Michal Irani
      "Detecting and Sketching the Common", CVPR 2010
 
-# License.
+## License.
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-    If you wish to use this software (or the algorithms described in the
-    aforementioned paper) for commercial purposes, you should be aware that
-    there is a US patent:
+If you wish to use this software (or the algorithms described in the
+aforementioned paper) for commercial purposes, you should be aware that
+there is a US patent:
 
        Eli Shechtman and Michal Irani
        "METHOD AND APPARATUS FOR MATCHING LOCAL SELF-SIMILARITIES"
 
 
-# Citation.
+## Citation.
 
-    If you use this package you HAVE to reference the aforementioned CVPR 2010 paper.
-    Here is a bibtex for that paper:
+If you use this package you HAVE to reference the aforementioned CVPR 2010 paper.
 
-@INPROCEEDINGS{Bagon2010,
+Here is a bibtex for that paper:
+
+    @INPROCEEDINGS{Bagon2010,
     author={Shai Bagon and Or Brostovski and Meirav Galun and  Michal Irani},
     booktitle={Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on},
     title={Detecting and Sketching the Common},
@@ -56,19 +53,19 @@
     pages={33--40},
     doi={10.1109/CVPR.2010.5540233},
     ISSN={1063-6919}
-}
+    }
 
-# Supported platforms
+## Supported platforms
 
-    This package contains Linux implementation only. It is unlikely that
-    a Windows/Mac/Unix versions will be added in the future. (if you wish
-    to create such a version by yourself, you may contact me at
-    shai.bagon@weizmann.ac.il for some assistance).
+This package contains Linux implementation only. It is unlikely that
+a Windows/Mac/Unix versions will be added in the future. (if you wish
+to create such a version by yourself, you may contact me at
+shaibagon@gmail.com for some assistance).
 
-    The software was tested with Matlab version 2008b and 2010b with 64bit
-    Linux machines.
+The software was tested with Matlab version 2008b and 2010b with 64bit
+Linux machines.
 
-# Installation.
+## Installation.
 
     Pre-requisite:
     You need to have opencv shared libraries installed on your machine, and
@@ -89,7 +86,7 @@
     Matlab should be able to guide you through the rest of the configuration process.
 
 
-# Usage.
+## Usage.
 
     1. The package comes with a simple usage example.
     In Matlab type:
@@ -105,7 +102,7 @@
     To see how to use this function.
 
 
-# Code.
+## Code.
 
     The following Matlab functions are part of this package:
     0. mexall.m
