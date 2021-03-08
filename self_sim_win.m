@@ -20,7 +20,7 @@ img_name = [tmp_name,'.png'];
 imwrite(img, img_name);
 
 ss_path = fileparts(which(mfilename));
-ss_exe = 'selfsim_cpp';
+ss_exe = 'selfsim_cpp_2021';
 if ispc()
     ss_exe = [ss_exe,'.exe'];
 end
